@@ -11,5 +11,6 @@ spec:
     server: {{ .Values.aws_infra.destination.server }}
   project: {{ .Values.project }}
   source:
+    path: network
     repoURL: {{ .Values.aws_infra.repoURL }}
     targetRevision: HEAD
