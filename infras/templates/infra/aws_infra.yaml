@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aws-infra
+  namespace: {{ .Values.namespace }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: {{ .Values.aws_infra.destination.namespace }}
+    server: {{ .Values.aws_infra.destination.server }}
+  project: {{ .Values.project }}
+  source:
+    path: test
+    repoURL: {{ .Values.aws_infra.repoURL }}
+    targetRevision: HEAD
