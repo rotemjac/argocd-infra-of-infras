@@ -16,7 +16,7 @@ aws_xrds:
 
 aws_xrds2:
   repoURL: https://github.com/rotemjac/Crossplane-XRs
-  path: databases/relational-db/rds/
+  path: databases/relational-db/rds2/
   destination:
     namespace: divvy-infra-crossplace-xrds2
     server: https://kubernetes.default.svc
