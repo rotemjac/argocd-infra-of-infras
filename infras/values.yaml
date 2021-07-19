@@ -6,3 +6,10 @@ aws_simple_resources:
   destination:
     namespace: aws-infra
     server: https://kubernetes.default.svc
+
+aws_xrds:
+  repoURL: https://github.com/rotemjac/Crossplane-XRs
+  path: databases/relational-db/rds/
+  destination:
+    namespace: divvy-infra-crossplace-xrds
+    server: https://kubernetes.default.svc
