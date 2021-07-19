@@ -1,7 +1,7 @@
 namespace : argocd
 project: infra
 
-aws_infra:
+aws_simple_resources:
   repoURL: https://github.com/rotemjac/crossplane-infra.git
   destination:
     namespace: aws-infra
