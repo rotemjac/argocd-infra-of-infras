@@ -3,8 +3,8 @@ kind: Application
 metadata:
   name: aws-simple-resources
   namespace: {{ .Values.namespace }}
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  #finalizers:
+  #  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: {{ .Values.aws_simple_resources.destination.namespace }}
