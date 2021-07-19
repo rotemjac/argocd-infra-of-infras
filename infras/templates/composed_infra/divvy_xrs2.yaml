@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: divvy-xrds2
+  namespace: {{ .Values.namespace }}
+  #finalizers:
+  #  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: {{ .Values.aws_xrds2.destination.namespace }}
+    server: {{ .Values.aws_xrds2.destination.server }}
+  project: {{ .Values.project }}
+  source:
+    path: {{ .Values.aws_xrds2.path }}
+    repoURL: {{ .Values.aws_xrds2.repoURL }}
+    targetRevision: HEAD
