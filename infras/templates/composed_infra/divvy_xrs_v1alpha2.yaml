@@ -7,10 +7,10 @@ metadata:
   #  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: {{ .Values.divvy_xrs_v1alpha2.destination.namespace }}
-    server: {{ .Values.divvy_xrs_v1alpha2.destination.server }}
+    namespace: {{ .Values.divvy_xrds_v1alpha2.destination.namespace }}
+    server: {{ .Values.divvy_xrds_v1alpha2.destination.server }}
   project: {{ .Values.project }}
   source:
-    path: {{ .Values.divvy_xrs_v1alpha2.path }}
-    repoURL: {{ .Values.divvy_xrs_v1alpha2.repoURL }}
+    path: {{ .Values.divvy_xrds_v1alpha2.path }}
+    repoURL: {{ .Values.divvy_xrds_v1alpha2.repoURL }}
     targetRevision: HEAD
