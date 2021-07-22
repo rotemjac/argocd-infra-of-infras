@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: divvy_xrs_v1alpha2
+  namespace: {{ .Values.namespace }}
+  #finalizers:
+  #  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: {{ .Values.divvy_xrs_v1alpha2.destination.namespace }}
+    server: {{ .Values.divvy_xrs_v1alpha2.destination.server }}
+  project: {{ .Values.project }}
+  source:
+    path: {{ .Values.divvy_xrs_v1alpha2.path }}
+    repoURL: {{ .Values.divvy_xrs_v1alpha2.repoURL }}
+    targetRevision: HEAD
