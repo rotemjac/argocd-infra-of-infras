@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aws-simple-resources-for-rds
+  namespace: {{ .Values.namespace }}
+  #finalizers:
+  #  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: {{ .Values.aws_simple_resources.destination.namespace }}
+    server: {{ .Values.aws_simple_resources.destination.server }}
+  project: {{ .Values.project }}
+  source:
+    path: network
+    repoURL: {{ .Values.aws_simple_resources.repoURL }}
+    targetRevision: HEAD
