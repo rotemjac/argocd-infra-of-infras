@@ -28,3 +28,10 @@ divvy_xrds_new:
   destination:
     namespace: divvy-infra-crossplace-xrds-new
     server: https://kubernetes.default.svc
+
+divvy_xrds_public:
+  repoURL: https://github.com/rotemjac/Crossplane-XRs
+  path: databases/relational-db/rds_public/
+  destination:
+    namespace: divvy-infra-crossplace-xrds-public
+    server: https://kubernetes.default.svc
