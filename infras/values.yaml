@@ -36,9 +36,23 @@ divvy_xrds_public:
     namespace: divvy-infra-crossplace-xrds-public
     server: https://kubernetes.default.svc
 
-divvy_cluster_xrds:
+csp_cluster_xrds:
   repoURL: https://github.com/rotemjac/Crossplane-XRs
   path: cluster
+  destination:
+    namespace: divvy-infra-crossplace-cluster-xrds
+    server: https://kubernetes.default.svc
+
+csp_network_xrds:
+  repoURL: https://github.com/rotemjac/Crossplane-XRs
+  path: cluster/network
+  destination:
+    namespace: divvy-infra-crossplace-cluster-xrds
+    server: https://kubernetes.default.svc
+
+csp_eks_xrds:
+  repoURL: https://github.com/rotemjac/Crossplane-XRs
+  path: cluster/eks
   destination:
     namespace: divvy-infra-crossplace-cluster-xrds
     server: https://kubernetes.default.svc

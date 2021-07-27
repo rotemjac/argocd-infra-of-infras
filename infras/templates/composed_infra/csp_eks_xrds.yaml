@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: csp-eks-xrds
+  namespace: {{ .Values.namespace }}
+  #finalizers:
+  #  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: {{ .Values.csp_eks_xrds.destination.namespace }}
+    server: {{ .Values.csp_eks_xrds.destination.server }}
+  project: {{ .Values.project }}
+  source:
+    path: {{ .Values.csp_eks_xrds.path }}
+    repoURL: {{ .Values.csp_eks_xrds.repoURL }}
+    targetRevision: HEAD

@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: csp-network-xrds
+  namespace: {{ .Values.namespace }}
+  #finalizers:
+  #  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: {{ .Values.csp_network_xrds.destination.namespace }}
+    server: {{ .Values.csp_network_xrds.destination.server }}
+  project: {{ .Values.project }}
+  source:
+    path: {{ .Values.csp_network_xrds.path }}
+    repoURL: {{ .Values.csp_network_xrds.repoURL }}
+    targetRevision: HEAD
