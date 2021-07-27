@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: divvy_cluster_xrds.yaml
+  namespace: {{ .Values.namespace }}
+  #finalizers:
+  #  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: {{ .Values.divvy_cluster_xrds.destination.namespace }}
+    server: {{ .Values.divvy_cluster_xrds.destination.server }}
+  project: {{ .Values.project }}
+  source:
+    path: {{ .Values.divvy_cluster_xrds.path }}
+    repoURL: {{ .Values.divvy_cluster_xrds.repoURL }}
+    targetRevision: HEAD
