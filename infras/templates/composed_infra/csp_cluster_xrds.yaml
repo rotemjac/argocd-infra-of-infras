@@ -7,10 +7,10 @@ metadata:
   #  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: {{ .Values.divvy_cluster_xrds.destination.namespace }}
-    server: {{ .Values.divvy_cluster_xrds.destination.server }}
+    namespace: {{ .Values.csp_cluster_xrds.destination.namespace }}
+    server: {{ .Values.csp_cluster_xrds.destination.server }}
   project: {{ .Values.project }}
   source:
-    path: {{ .Values.divvy_cluster_xrds.path }}
-    repoURL: {{ .Values.divvy_cluster_xrds.repoURL }}
+    path: {{ .Values.csp_cluster_xrds.path }}
+    repoURL: {{ .Values.csp_cluster_xrds.repoURL }}
     targetRevision: HEAD
